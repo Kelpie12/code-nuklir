@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "bot.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot --open --port $PORT",
+    "start": "node bot.js",
     "build": "npm i -dev && webpack --mode production",
     "heroku-postbuild": "npm build"
   },
