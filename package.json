@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "bot.js",
   "scripts": {
-    "start": "nodemon bot.js",
-    "build": "npm i -dev && webpack --mode production",
+    "start": "node bot.js",
     "heroku-postbuild": "npm build"
   },
   "keywords": [],
