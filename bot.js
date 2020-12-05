@@ -29,7 +29,11 @@ client.on("message", msg => {
 
 function findCode(str){
     const find = str.content.substr(6);
-    str.reply(`https://nhentai.net/g/${find}/`);
+    if(find != "auto"){
+        str.reply(`https://nhentai.net/g/${find}/`);
+    }else{
+        str.reply("NGENTOT");
+    }
 }
 
 client.login(process.env.TOKEN);
