@@ -29,10 +29,17 @@ client.on("message", msg => {
 
 function findCode(str){
     const find = str.content.substr(6);
-    if(find != "auto"){
+    if(!find.includes("auto")){
         str.reply(`https://nhentai.net/g/${find}/`);
     }else{
-        str.reply("NGENTOT");
+        str.reply(find);
+        for(let i = 0; i < 10; i++){
+            let time = setTimeout(() => {
+                find = Math.floor(Math.random() * 9999 + 1);
+                str.reply(`https://nhentai.net/g/${find}/`);
+            }, 1000);
+            clearInterval(time);
+        }
     }
 }
 
