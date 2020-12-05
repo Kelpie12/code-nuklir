@@ -30,16 +30,12 @@ client.on("message", msg => {
 
 function findCode(str){
     const find = str.content.substr(6);
-    if(!find.includes("auto")){
+    if(find !== ("auto")){
         str.reply(`https://nhentai.net/g/${find}/`);
-    }else{
-        str.reply(find);
-        for(let i = 0; i < 10; i++){
-            let time = setTimeout(() => {
-                find = Math.floor(Math.random() * 99999 + 1);
-                str.reply(`https://nhentai.net/g/${find}/`);
-            }, 1000);
-            clearInterval(time);
+    }else if(find === "auto"){
+        for(let i = 0; i < 5; i++){
+            find = Math.floor(Math.random() * 99999 + 1);
+            str.channel.send(`https://nhentai.net/g/${find}/`);
         }
     }
 }
