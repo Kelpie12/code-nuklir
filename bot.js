@@ -11,6 +11,7 @@ app.get('/', function(request, response) {
     console.log('App is running, server is listening on port ', app.get('port'));
 });
 
+
 const Discord = require("discord.js");
 const client = new Discord.Client();
 require("dotenv").config();
@@ -35,7 +36,7 @@ function findCode(str){
         str.reply(find);
         for(let i = 0; i < 10; i++){
             let time = setTimeout(() => {
-                find = Math.floor(Math.random() * 9999 + 1);
+                find = Math.floor(Math.random() * 99999 + 1);
                 str.reply(`https://nhentai.net/g/${find}/`);
             }, 1000);
             clearInterval(time);
